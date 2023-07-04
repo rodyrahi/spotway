@@ -1,0 +1,136 @@
+<style>
+  .ico{
+    font-size: 1.2rem;
+  }
+  i.fa {
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0 0 2px #888;
+  background-color: #2e3c5d;
+  padding: 0.5em 0.6em;
+  color: white;
+  aspect-ratio: 1/1;
+
+}
+
+</style>
+<!-- <form action="/dashboard" method="post">
+    <div class="mb-3">
+      <h3>User</h3>
+      <input type="text" class="form-control" value="<%= user.name %>" name="name" id="name" placeholder="Enter your name">
+    </div>
+    <div class="mb-3">
+      <select class="form-select" id="gender" name="gender">
+        <option value="male" <%= user.gender === 'male' ? 'selected' : '' %>>Male</option>
+        <option value="female" <%= user.gender === 'female' ? 'selected' : '' %>>Female</option>
+        <option value="other" <%= user.gender === 'other' ? 'selected' : '' %>>Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <textarea class="form-control" name="address" id="address" rows="3" placeholder="Enter your address"><%= user.address %></textarea>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-dark">Update Profile</button>
+    </div>
+</form> -->
+
+
+<div class="row" style="cursor: pointer; display: flex;">
+
+ 
+
+  <h3>Profile</h3>
+  <div class="p-2 border rounded shadow d-flex " style="background-color:  #2e3c5d; align-items: center;" >
+    
+    <div>
+      <i class="fa-solid fa fa-user me-3" style="background-color: white; color: #2e3c5d; font-size: 1.5rem;"></i>
+
+    </div>
+    
+  <div>
+
+    <p class="text-white m-0" style="font-size: 1.3rem;">Rajvendra Rahi</p>
+    <p class="m-0" style="color: rgb(183, 182, 182);" >rajvendrarahi126@gmail.com</p>
+
+  </div>
+
+  </div>
+</div>
+
+
+
+<div class="bg-light row my-3">
+
+  <div class="row">
+    <div class="d-flex p-1 " style="align-items: center;">
+       <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid fa fa-car me-3"></i> Park</a>
+    </div>
+  
+  </div>
+  
+
+  <div class="row">
+    <div class="d-flex p-1 " style="align-items: center;">
+       <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid fa fa-bolt me-3"></i> Charge</a>
+    </div>
+  
+  </div>
+  
+  <div class="row">
+    <div class="d-flex p-1 " style="align-items: center;">
+       <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid fa fa-gas-pump me-3"></i> Fuel</a>
+    </div>
+  
+  </div>
+  
+  <div class="row">
+    <div class="d-flex p-1 " style="align-items: center;">
+       <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid fa fa-toolbox me-3"></i> Flat Tire</a>
+    </div>
+  
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+<div class="row">
+  <div class="d-flex  p-2 my-1" style="align-items: center; border-top: 1px rgb(221, 221, 221) solid;">
+     <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid ico fa-bell me-3" ></i> Help & Support</a>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="d-flex  p-2 my-1" style="align-items: center; border-top: 1px rgb(221, 221, 221) solid;">
+     <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid ico fa-share-nodes me-3"></i> Referral</a>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="d-flex  p-2 my-1" style="align-items: center; border-top: 1px rgb(221, 221, 221) solid;">
+     <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid ico fa-language me-3"></i>Language</a>
+  </div>
+
+</div>
+
+
+
+<div class="row">
+  <div class="d-flex  p-2 my-1" style="align-items: center; border-top: 1px rgb(221, 221, 221) solid;">
+     <a class="m-0 text-dark" href="/" style="text-decoration: none;" ><i class="fa-solid ico fa-right-from-bracket me-3"></i> Logout</a>
+  </div>
+
+</div>
+
+</div>
+
+
+  <div class="position-absolute" style="bottom: 10px; right: 10px;">
+    <i class="fa-solid fa-xmark" style="font-size: 2rem; " onclick="toggleSidePanel()"></i>
+  </div>

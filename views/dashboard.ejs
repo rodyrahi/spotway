@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone GUI</title>
+  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Oswald:wght@500;600&family=Ysabeau+Infant:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    #map {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .chin {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+    }
+
+    .chin .nav-link {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .user-panel {
+
+      z-index: 1000;
+      margin: 10px;
+      padding: 1px;
+      align-items: center;
+      text-align: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 0.2rem;
+
+      color: aliceblue;
+      cursor: pointer;
+    }
+
+    .side-panel {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #f1f1f1;
+      transition: right 0.3s ease-in-out;
+      z-index: 999;
+    }
+
+    .side-panel.active {
+      right: 0;
+    }
+  </style>
+</head>
+
+
+
+
+
+<body class="bg-secondary" style="font-family: 'Ysabeau Infant', sans-serif;">
+
+  <nav class="navbar shadow " style="background-color: #2e3c5d;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white ">SpotWay</a>
+      <!-- <form class="d-flex" role="search">
+        <div class="user-panel bg-danger p-2 m-1 d-flex me-auto ">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </form> -->
+    </div>
+  </nav>
+
+
+
+  <div class="input-group rounded m-2">
+    <input type="search" style="max-width: 255px;" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+
+      <i class="fas fa-search m-2 " style="font-size: 1.5rem;"></i>
+   
+  </div>
+
+
+
+  <!-- Side Panel -->
+  <div class="side-panel p-1 shadow" id="sidePanel" style=" border-radius: 0.5rem 0 0  0.5rem; ">
+    <div class="container">
+      <%- include('./partials/sidepanel.ejs' , {user:user}) %>
+
+    </div>
+
+
+  </div>
+
+
+
+  <div id="map"></div>
+
+  <nav class="navbar chin shadow navbar-expand pt-3 " style="background-color: #2e3c5d;">
+    <div class="container-fluid">
+      <ul class="navbar-nav flex-fill">
+        <!-- <li class="nav-item flex-fill">
+
+
+          <a class=" btn btn-danger shadow" style="border-radius: 5rem;" href="#" onclick="fuel()">
+            <i class="fa-solid fa-fire-flame-simple"></i>
+
+          </a>
+        </li>
+        <li class="nav-item flex-fill ">
+          <a class=" btn btn-danger shadow" style="border-radius: 5rem;" href="#" onclick="charger()">
+            <i class="fa-solid fa-bolt"></i>
+          </a>
+        </li>
+        <li class="nav-item flex-fill">
+          <a class=" btn btn-danger shadow" style="border-radius: 5rem;" href="#" onclick="parking()">
+            <i class="fa-solid fa-square-parking"></i>
+          </a>
+        </li> -->
+        <li class="nav-item flex-fill text-center">
+          <i class="fa-solid fa-house text-light" style="font-size: 1.5rem; " onclick="toggleSidePanel()"></i>
+
+
+
+        </li>        
+        <li class="nav-item flex-fill text-center">
+          
+          <i class="fa-solid fa-plus text-light" style="font-size: 1.5rem; " onclick="toggleSidePanel()"></i>
+
+
+        </li>
+        <li class="nav-item flex-fill text-center">
+          <i class="fa-solid fa-gear text-light" style="font-size: 1.5rem; " onclick="toggleSidePanel()"></i>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+  <script>
+    function initMap() {
+      var mapOptions = {
+        center: {
+          lat: 37.7749,
+          lng: -122.4194
+        },
+        zoom: 13
+      };
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
+
+
+    function fuel() {
+      alert('Fuel button clicked!');
+
+    }
+
+    function charger() {
+      alert('Charger button clicked!');
+
+    }
+
+    function parking() {
+      alert('Parking button clicked!');
+
+    }
+
+    function flatTire() {
+      alert('Flat Tire button clicked!');
+
+    }
+  </script>
+
+  <script>
+    function toggleSidePanel() {
+      var sidePanel = document.getElementById("sidePanel");
+      sidePanel.classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>
