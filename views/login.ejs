@@ -25,39 +25,24 @@
       <div class="row justify-content-center mt-5">
         <div class="col-md-6">
           <ul class="nav nav-tabs">
+
             <li class="nav-item">
-              <a class="nav-link" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" id="signin-tab" data-bs-toggle="tab" href="#signin">OTP </a>
+              <a class="nav-link active" id="signin-tab" data-bs-toggle="tab" href="#signin">Sign Using OTP</a>
             </li>
           </ul>
           <div class="tab-content mt-2">
-            <div class="tab-pane fade " id="login">
-              <h3>Login</h3>
-              <form id="login-form" action="/dashboard" method="post">
-                <div class="mb-3">
-                  <label for="phone" class="form-label">Number</label>
-                  <input type="tel" class="form-control" id="phone">
-                </div>
-                <div class="mb-3">
-                  <label for="login-password" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="login-password">
-                </div>
-                <button type="submit" class="btn btn-dark">Submit</button>
-              </form>
-            </div>
+
             <div class="tab-pane fade show active" id="signin">
 
               <div class="" id="another-form" style="">
 
-                <h3>Enter Number </h3>
+                <h3>Enter Phone </h3>
                 <form id="signin-form">
                   <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
+                    <label for="phone" class="form-label">Number</label>
                     <input type="tel" class="form-control" name="phone" id="phone">
                   </div>
-                  <button type="submit" class="btn btn-dark">Submit</button>
+                  <button type="submit" class="btn btn-dark rounded-pill">Submit</button>
                 </form>
               </div>
 
@@ -69,7 +54,7 @@
                     <label for="another-field" class="form-label">OTP</label>
                     <input type="tel" maxlength="3" name="otp" class="form-control" id="otp">
                   </div>
-                  <button type="submit" class="btn btn-secondary">Submit</button>
+                  <button type="submit" class="btn btn-secondary rounded-pill ">Submit</button>
                 </form>
               </div>
 
