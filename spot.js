@@ -66,10 +66,10 @@ app.get('/dashboard', async (req, res) => {
 
 
 app.post('/dashboard', async (req, res) => {
-  const { name, gender, address } = req.body;
+  const { name, gender, city } = req.body;
 
   await executeQuery(
-    `UPDATE profile SET name = '${name}', gender = '${gender}', address = '${address}' WHERE contact = '${req.session.phoneNumber}'`
+    `UPDATE profile SET name = '${name}', gender = '${gender}', city = '${city}' WHERE contact = '${req.session.phoneNumber}'`
   );
 
   res.redirect('/dashboard');

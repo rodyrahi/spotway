@@ -63,6 +63,18 @@
     .side-panel.active {
       right: 0;
     }
+
+    i.fa {
+      display: inline-block;
+      border-radius: 60px;
+      box-shadow: 0 0 2px #888;
+      background-color: #2e3c5d;
+      padding: 0.5em 0.6em;
+      color: white;
+      aspect-ratio: 1/1;
+    
+    }
+
   </style>
 </head>
 
@@ -82,6 +94,34 @@
       </form> -->
     </div>
   </nav>
+
+
+  <div class=" collapse text-end "  id="collapseExample" style="z-index: 999;
+  position: absolute;
+  bottom: 60px;
+  right: 5px;
+  top: 406px;
+  width: 132px;
+  
+  ">
+  <div class="m-2">
+    <a class="m-0 text-dark" href="/" style="text-decoration: none;" > Park <i class="fa-solid fa fa-car "></i></a>
+
+  </div>
+  <div class="m-2">
+    <a class="m-0 text-dark" href="/" style="text-decoration: none;" > Charge <i class="fa-solid fa fa-bolt "></i> </a>
+
+  </div>  <div class="m-2">
+    <a class="m-0 text-dark" href="/" style="text-decoration: none;" > Fuel <i class="fa-solid fa fa-gas-pump "></i></a>
+
+  </div>  <div class="m-2">
+    <a class="m-0 text-dark" href="/" style="text-decoration: none;" > Flat Tire  <i class="fa-solid fa fa-toolbox "></i></a>
+
+  </div>
+
+
+
+  </div>
 
 
 
@@ -129,13 +169,18 @@
           </a>
         </li> -->
         <li class="nav-item flex-fill text-center">
+          
           <i class="fa-solid fa-house text-light" style="font-size: 1.5rem; " onclick="toggleSidePanel()"></i>
 
 
         </li>        
         <li class="nav-item flex-fill text-center">
-          
-          <i class="fa-solid fa-plus text-light" style="font-size: 1.5rem; " onclick="toggleSidePanel()"></i>
+          <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa-solid fa-plus text-light" style="font-size: 1.5rem; " ></i>
+
+          </a>
+
+         
 
 
         </li>
@@ -150,52 +195,55 @@
 
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
-  <script>
-    function initMap() {
-      var mapOptions = {
-        center: {
-          lat: 37.7749,
-          lng: -122.4194
-        },
-        zoom: 13
-      };
-      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    }
-
-
-    function fuel() {
-      alert('Fuel button clicked!');
-
-    }
-
-    function charger() {
-      alert('Charger button clicked!');
-
-    }
-
-    function parking() {
-      alert('Parking button clicked!');
-
-    }
-
-    function flatTire() {
-      alert('Flat Tire button clicked!');
-
-    }
-  </script>
-
-  <script>
-    function toggleSidePanel() {
-      var sidePanel = document.getElementById("sidePanel");
-      sidePanel.classList.toggle("active");
-    }
-  </script>
+ 
 </body>
 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+<script>
+  function initMap() {
+    var mapOptions = {
+      center: {
+        lat: 37.7749,
+        lng: -122.4194
+      },
+      zoom: 13
+    };
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  }
+
+
+  function fuel() {
+    alert('Fuel button clicked!');
+
+  }
+
+  function charger() {
+    alert('Charger button clicked!');
+
+  }
+
+  function parking() {
+    alert('Parking button clicked!');
+
+  }
+
+  function flatTire() {
+    alert('Flat Tire button clicked!');
+
+  }
+</script>
+
+<script>
+  function toggleSidePanel() {
+    var sidePanel = document.getElementById("sidePanel");
+    sidePanel.classList.toggle("active");
+  }
+</script>
 </html>
