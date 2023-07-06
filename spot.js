@@ -34,10 +34,16 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.post('/home', (req, res) => {
+app.post('/home', async (req, res) => {
   console.log(req.body);
-  if (randomCode === req.body.otp) {
+
+
+  const result = await executeQuery(`SELECT * FROM profile WHERE contact='${req.session.phoneNumber}'`)
+ 
+  if (randomCode === req.body.otp && result<1) {
     res.render('createuser');
+  }else{
+    res.redirect('/dashboard')
   }
 });
 
@@ -75,6 +81,25 @@ app.post('/dashboard', async (req, res) => {
 app.get('/login', (req, res) => {
   res.render('login');
 });
+
+app.get('/profile', async (req, res) => {
+
+  console.log(req.session.phoneNumber);
+    if (req.session.phoneNumber) {
+      const result = await executeQuery(`SELECT * FROM profile WHERE contact='${req.session.phoneNumber}'`)
+      console.log(result);
+      res.render('profile' , {user:result[0]});
+  
+    }
+    else{
+      res.send(500)
+
+    }
+  });
+
+
+
+
 
 let randomCode;
 
